@@ -118,7 +118,7 @@ elif(legenda == 'Nacionality'):
     st.sidebar.write("14 - Inglês")
 
 # Legeda Qualificações da Mãe e do Pai
-elif(legenda = "Mother's and Father's qualification"):
+elif(legenda == "Mother's and Father's qualification"):
     st.sidebar.write("2 - Ensino Superior - Bacharelado")
     st.sidebar.write("3 – Ensino Superior – Licenciatura")
     st.sidebar.write("4 – Ensino Superior – Mestrado")
