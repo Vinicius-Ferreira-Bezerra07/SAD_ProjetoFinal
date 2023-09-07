@@ -119,3 +119,15 @@ elif(legenda == 'Nacionality'):
 
 # Legeda Qualificações da Mãe e do Pai
 elif(legenda = "Mother's and Father's qualification"):
+    st.sidebar.write("2 - Ensino Superior - Bacharelado")
+    st.sidebar.write("3 – Ensino Superior – Licenciatura")
+    st.sidebar.write("4 – Ensino Superior – Mestrado")
+    st.sidebar.write("5 – Ensino Superior – Doutorado")
+    st.sidebar.write("6 - Frequência do Ensino Superior")
+    st.sidebar.write("9 - 12º Ano de Escolaridade - Não Concluído")
+    st.sidebar.write("10 - 11º Ano de Escolaridade - Não Concluído")
+    st.sidebar.write("11 - 7º ano (antigo)")
+    st.sidebar.write("12 - Outros - 11º Ano de Escolaridade")
+    st.sidebar.write("14 - 10º Ano de Escolaridade")
+    st.sidebar.write("18 – Curso de comércio geral")
+    st.sidebar.write("19 - Ensino Básico 3.º Ciclo (9.º/10.º/11.º Ano) ou Equiv.")
