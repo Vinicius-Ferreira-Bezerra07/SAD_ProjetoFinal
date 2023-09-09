@@ -21,7 +21,7 @@ print(dataBase['Nacionality'].value_counts())
 
 # st.pyplot(fig1)
 
-w = sidebar.title('Filtro os estudantes')
+w = st.sidebar.title('Filtro os estudantes')
 
 # Histograma de alunos divididos por curso
 st.write("Histograma de alunos divididos por curso")

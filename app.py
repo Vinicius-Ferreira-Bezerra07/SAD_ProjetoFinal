@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Link para collab onde tem ulgumas tabelas filtros de exemplo
+# https://colab.research.google.com/drive/1GN-y2J88mMGIIdlvBao-gTvVLNAHyrd7?usp=sharing
+
 # Lendo a Base de dados
 dataBase = pd.read_csv('dataset.csv')
 
@@ -22,12 +25,300 @@ if(baseSelecionada == 'Completa'):
     st.title("Dados dos estudantes Universitarios")
     st.dataframe(dataBase)
 
-    st.write("Histograma de alunos divididos por curso")
-    fig2, ax2 = plt.subplots()
-    ax2.hist(dataBase['Course'], bins = 17)
-    plt.xticks(range(17))
+    selectColuna = st.selectbox("Escolha a coluna a ser exibida", ["", "Marital status", "Application mode", "Application order", "Course", "Daytime/evening attendance", "Previous qualification", "Nacionality", "Mother's qualification", "Father's qualification", "Displaced", "Educational special needs", "Debtor", "Tuition fees up to date", "Gender", "Scholarship holder", "Age at enrollment", "International", "Curricular units 1st sem (credited)", "Curricular units 1st sem (enrolled)", "Curricular units 1st sem (evaluations)", "Curricular units 1st sem (approved)", "Curricular units 1st sem (grade)", "Curricular units 1st sem (without evaluations)", "Curricular units 2nd sem (credited)", "Curricular units 2nd sem (enrolled)", "Curricular units 2nd sem (evaluations)", "Curricular units 2nd sem (approved)", "Curricular units 2nd sem (grade)", "Curricular units 2nd sem (without evaluations)", "Unemployment rate", "Inflation rate", "GDP"])
+    # Seleção de histograma vazio
+    if(selectColuna == ""):
+        print(".1")
+    
+    # Seleção de histograma do Estado Civil
+    elif(selectColuna == "Marital status"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
 
-    st.pyplot(fig2)
+        st.pyplot(fig)
+    
+    # Seleção de histograma do Forma de Aplicação
+    elif(selectColuna == "Application mode"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], bins= 18, range=[1,18], rwidth=0.9)
+        plt.xticks(range(19))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do Ordem de Aplicação
+    elif(selectColuna == "Application order"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], range=[1,8], rwidth=0.8)
+        # plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do Curso
+    elif(selectColuna == "Course"):
+        st.write("")
+        st.write("Histograma de alunos divididos por curso")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], bins = 17)
+        plt.xticks(range(17))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do horario de aulas
+    elif(selectColuna == "Daytime/evening attendance"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(2))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificação previa
+    elif(selectColuna == "Previous qualification"):
+        st.write("Histograma de alunos por qualificação previa")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(18))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do Nacionalidade
+    elif(selectColuna == "Nacionality"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+    
+    # Seleção de histograma do qualificações da mãe
+    elif(selectColuna == "Mother's qualification"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+    
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Fathe's qualification"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+    
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Displaced"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+    
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Educational special needs"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Debtor"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Tuition fees up to date"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Gender"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Scholarship holder"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "Age at enrollment"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "International"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 1º semestre (creditadas)
+    elif(selectColuna == "Curricular units 1st sem (credited)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 1º semestre (matriculado)
+    elif(selectColuna == "Curricular units 1st sem (enrolled)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 1º semestre (avaliações)
+    elif(selectColuna == "Curricular units 1st sem (evaluations)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 1º semestre (aprovado)
+    elif(selectColuna == "Curricular units 1st sem (approved)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 1º semestre (Nota)
+    elif(selectColuna == "Curricular units 1st sem (grade)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 1º semestre (sem avaliações)
+    elif(selectColuna == "Curricular units 1st sem (without evaluations)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 2º semestre (creditadas)
+    elif(selectColuna == "Curricular units 2nd sem (credited)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 2º semestre (matriculado)
+    elif(selectColuna == "Curricular units 2nd sem (enrolled)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 2º semestre (avaliações)
+    elif(selectColuna == "Curricular units 2nd sem (evaluations)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 2º semestre (aprovado)
+    elif(selectColuna == "Curricular units 2nd sem (approved)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 2º semestre (Nota)
+    elif(selectColuna == "Curricular units 2nd sem (grade)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma das Unidades curriculares 2º semestre (sem avaliações)
+    elif(selectColuna == "Curricular units 2nd sem (without evaluations)"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do taxa de desemprego
+    elif(selectColuna == "Unemployment rate"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do taxa de inflação
+    elif(selectColuna == "Inflation rate"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
+    # Seleção de histograma do qualificações do pai
+    elif(selectColuna == "GDP"):
+        st.write("Histograma de alunos por Estado Civil")
+        fig, ax2 = plt.subplots()
+        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        plt.xticks(range(8))
+
+        st.pyplot(fig)
+
 
 # Base apenas com os alunos Graduados
 elif (baseSelecionada == 'Graduados'):
@@ -36,11 +327,10 @@ elif (baseSelecionada == 'Graduados'):
     st.dataframe(dataGraduate)
 
     st.write("Histograma de alunos Graduados divididos por curso")
-    fig2, ax2 = plt.subplots()
-    ax2.hist(dataGraduate['Course'], bins = 17)
-    plt.xticks(range(17))
+    fig, ax2 = plt.subplots()
+    ax2.hist(dataGraduate['Course'], bins = 17, histtype='bar', rwidth=0.8)
 
-    st.pyplot(fig2)
+    st.pyplot(fig)
 
 # Base apensa com os alunos Desistentes
 elif(baseSelecionada == 'Abandonos'):
@@ -49,11 +339,11 @@ elif(baseSelecionada == 'Abandonos'):
     st.dataframe(dataDropout)
 
     st.write("Histograma de alunos Desistentes divididos por curso")
-    fig2, ax2 = plt.subplots()
+    fig, ax2 = plt.subplots()
     ax2.hist(dataDropout['Course'], bins = 17)
     plt.xticks(range(17))
 
-    st.pyplot(fig2)
+    st.pyplot(fig)
 
 # Seleção da exibição de legendas
 # Legeda Martial status
@@ -131,3 +421,36 @@ elif(legenda == "Mother's and Father's qualification"):
     st.sidebar.write("14 - 10º Ano de Escolaridade")
     st.sidebar.write("18 – Curso de comércio geral")
     st.sidebar.write("19 - Ensino Básico 3.º Ciclo (9.º/10.º/11.º Ano) ou Equiv.")
+
+elif(legenda == "Mother's and Father's occupation"):
+    st.sidebar.write("1 - 0 - Estudante")
+    st.sidebar.write("2 - 1º - Representantes do Poder Legislativo e dos Órgãos Executivos, Diretores, Diretores e Gerentes Executivos")
+    st.sidebar.write("3 - 2 - Especialistas em Atividades Intelectuais e Científicas")
+    st.sidebar.write("4 - 3 - Técnicos e Profissões de Nível Intermediário")
+    st.sidebar.write("5 - 4 – Pessoal administrativo")
+    st.sidebar.write("6 - 5 - Serviços Pessoais, Trabalhadores e Vendedores de Segurança e Proteção")
+    st.sidebar.write("7 - 6 - Agricultores e trabalhadores qualificados na agricultura, pesca e silvicultura")
+    st.sidebar.write("8 - 7 - Trabalhadores qualificados na indústria, construção e artesãos")
+    st.sidebar.write("9 - 8 - Operadores de Instalação e Máquinas e Trabalhadores de Montagem")
+    st.sidebar.write("10 - 9 – Trabalhadores não qualificados")
+    st.sidebar.write("11 - 10 - Profissões das Forças Armadas")
+    st.sidebar.write("12 - 90 - Outra Situação")
+    st.sidebar.write("13 - 99 - (em branco)")
+    st.sidebar.write("14 - 122 - Profissionais de saúde")
+    st.sidebar.write("15 - 123 - professores")
+    st.sidebar.write("16 - 125 - Especialistas em tecnologias de informação e comunicação (TIC)")
+    st.sidebar.write("17 - 131 - Técnicos e profissões de ciência e engenharia de nível intermediário")
+    st.sidebar.write("18 - 132 - Técnicos e profissionais, de nível intermédio de saúde 134 - Técnicos de nível intermédio dos serviços jurídicos, sociais, desportivos, culturais e similares")
+    st.sidebar.write("19 - 141 - Trabalhadores de escritório, secretárias em geral e operadores de processamento de dados")
+    st.sidebar.write("20 - 143 - Operadores de dados, contabilidade, estatística, serviços financeiros e operadores relacionados a registros")
+    st.sidebar.write("21 - 144 - Outro pessoal de apoio administrativo")
+    st.sidebar.write("22 - 151 - trabalhadores de serviços pessoais")
+    st.sidebar.write("23 - 152 - vendedores")
+    st.sidebar.write("24 - 153 - Profissionais de cuidados pessoais e similares")
+    st.sidebar.write("25 - 171 - Trabalhadores qualificados da construção civil e similares, exceto eletricistas")
+    st.sidebar.write("26 - 173 - Trabalhadores qualificados em impressão, fabricação de instrumentos de precisão, joalheiros, artesãos e similares")
+    st.sidebar.write("27 - 175 - Trabalhadores de processamento de alimentos, marcenaria, vestuário e outras indústrias e artesanato")
+    st.sidebar.write("28 - 191 - trabalhadores de limpeza")
+    st.sidebar.write("29 - 192 - Trabalhadores não qualificados na agricultura, produção animal, pesca e silvicultura")
+    st.sidebar.write("30 - 193 - Trabalhadores não qualificados na indústria extractiva, construção, indústria transformadora e transportes")
+    st.sidebar.write("31 - 194 - Auxiliares de preparação de refeições")
