@@ -17,7 +17,7 @@ st.sidebar.title("Predict students' dropout and academic success")
 # Seleção do filtro de Graduação e Desistencias da base.
 baseSelecionada = st.sidebar.selectbox('Escolha o formato da base', ['Completa', 'Graduados', 'Abandonos'])
 # Selecção de campos da tabala e suas legendas.
-legenda = st.sidebar.selectbox('Escolha o campo que deseja consultar a Legenda', ['Martial status', 'Course', 'Daytime/evening', 'Previous qualification', 'Nacionality', "Mother's and Father's qualification", "Gender"])
+legenda = st.sidebar.selectbox('Escolha o campo que deseja consultar a Legenda', ['Martial status', 'Application mode', 'Course', 'Daytime/evening', 'Previous qualification', 'Nacionality', "Mother's and Father's qualification", "Gender"])
 
 # Verifivação do Filtro da Base da dados.
 # Base completa
@@ -1033,3 +1033,22 @@ elif(legenda == "Mother's and Father's occupation"):
 elif(legenda == "Gender"):
     st.sidebar.write("0 - Feminino")
     st.sidebar.write("1 - Masculino")
+
+elif(legenda == "Application mode"):
+    st.sidebar.write("1 – 1ª fase – contingente geral")
+    st.sidebar.write("2 – Portaria nº 612/93")
+    st.sidebar.write("3 - 1ª fase - contingente especial (Ilha dos Açores)")
+    st.sidebar.write("4 - Titulares de outros cursos superiores")
+    st.sidebar.write("5 - Portaria nº 854-B/99")
+    st.sidebar.write("6 - Estudante internacional (bacharelado)")
+    st.sidebar.write("7 – 1ª fase – contingente especial (Ilha da Madeira)")
+    st.sidebar.write("8 – 2ª fase – contingente geral")
+    st.sidebar.write("9 – 3ª fase – contingente geral")
+    st.sidebar.write("10 - Portaria n.º 533-A/99, alínea b2) (Plano Diferente)")
+    st.sidebar.write("11 - Portaria nº 533-A/99, item b3 (Outra Instituição)")
+    st.sidebar.write("12 - Maiores de 23 anos 42 - Transferência")
+    st.sidebar.write("13 – Mudança de rumo")
+    st.sidebar.write("14 - Titulares de diploma de especialização tecnológica")
+    st.sidebar.write("15 - Mudança de instituição/curso")
+    st.sidebar.write("16 - Titulares de diplomas de ciclo curto")
+    st.sidebar.write("17 - Mudança de instituição/curso (Internacional)")
