@@ -348,7 +348,7 @@ elif (baseSelecionada == 'Graduados'):
     elif(selectColuna == "Marital status"):
         st.write("Histograma de alunos por Aplicação")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataGraduate[selectColuna], rwidth=0.8)
+        ax2.hist(dataGraduate[selectColuna], bins=range(8),rwidth=0.8)
         plt.xticks(range(8))
 
         st.pyplot(fig)
@@ -357,7 +357,7 @@ elif (baseSelecionada == 'Graduados'):
     elif(selectColuna == "Application mode"):
         st.write("Histograma de alunos por Aplicação")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataGraduate[selectColuna], bins= 18, range=[1,18], rwidth=0.9)
+        ax2.hist(dataGraduate[selectColuna], bins= range(18), range=[1,18], rwidth=0.9)
         plt.xticks(range(19))
 
         st.pyplot(fig)
@@ -376,7 +376,7 @@ elif (baseSelecionada == 'Graduados'):
         st.write("")
         st.write("Histograma de alunos divididos por curso")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataGraduate[selectColuna], bins = 17)
+        ax2.hist(dataGraduate[selectColuna], bins = range(17),rwidth=0.8) 
         plt.xticks(range(17))
 
         st.pyplot(fig)
@@ -385,8 +385,9 @@ elif (baseSelecionada == 'Graduados'):
     elif(selectColuna == "Daytime/evening attendance"):
         st.write("Histograma de alunos por Horario das aulas")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataGraduate[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataGraduate[selectColuna],bins=[0,1,2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Daytime", "Evening"])
 
         st.pyplot(fig)
 
@@ -394,7 +395,7 @@ elif (baseSelecionada == 'Graduados'):
     elif(selectColuna == "Previous qualification"):
         st.write("Histograma de alunos por qualificação previa")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataGraduate[selectColuna], rwidth=0.5)
+        ax2.hist(dataGraduate[selectColuna], bins=range(1, 19), rwidth=0.5)
         plt.xticks(range(18))
 
         st.pyplot(fig)
