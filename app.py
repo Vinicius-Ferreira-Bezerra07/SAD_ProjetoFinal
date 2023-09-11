@@ -31,164 +31,170 @@ if(baseSelecionada == 'Completa'):
         print(".1")
     
     # Seleção de histograma do Aplicação
-    elif(selectColuna == "Marital status"):
-        st.write("Histograma de alunos por Aplicação")
+    elif selectColuna == "Marital status":
+        st.write("Histograma de alunos por Estado Civil")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(8))
+        ax2.hist(dataBase[selectColuna], rwidth=0.8, bins=range(1, 9))
+        ax2.set_xticks(range(1, 9))
 
         st.pyplot(fig)
     
     # Seleção de histograma do Forma de Aplicação
-    elif(selectColuna == "Application mode"):
+    elif selectColuna == "Application mode":
         st.write("Histograma de alunos por Aplicação")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], bins= 18, range=[1,18], rwidth=0.9)
-        plt.xticks(range(19))
+        ax2.hist(dataBase[selectColuna], bins=range(1, 19), rwidth=0.9)
+        ax2.set_xticks(range(1, 19))
 
         st.pyplot(fig)
 
     # Seleção de histograma do Ordem de Aplicação
-    elif(selectColuna == "Application order"):
+    elif selectColuna == "Application order":
         st.write("Histograma de alunos por Ordem de aplicação")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], range=[1,8], rwidth=0.8)
-        # plt.xticks(range(8))
+        ax2.hist(dataBase[selectColuna], rwidth=0.5, bins=range(8))  # Ajuste o valor de rwidth
+        ax2.set_xticks(range(10))  # Ajuste as marcações no eixo x de acordo com o número de bins
 
         st.pyplot(fig)
-
     # Seleção de histograma do Curso
-    elif(selectColuna == "Course"):
-        st.write("")
+    elif selectColuna == "Course":
         st.write("Histograma de alunos divididos por curso")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], bins = 17)
-        plt.xticks(range(17))
+        ax2.hist(dataBase[selectColuna], bins=range(1, 18), rwidth=0.8)
+        ax2.set_xticks(range(1, 18))
 
         st.pyplot(fig)
 
     # Seleção de histograma do horario de aulas
-    elif(selectColuna == "Daytime/evening attendance"):
-        st.write("Histograma de alunos por Horario das aulas")
+    elif selectColuna == "Daytime/evening attendance":
+        st.write("Histograma de alunos por Horário das aulas")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Daytime", "Evening"])
 
         st.pyplot(fig)
 
     # Seleção de histograma do qualificação previa
-    elif(selectColuna == "Previous qualification"):
-        st.write("Histograma de alunos por qualificação previa")
+    elif selectColuna == "Previous qualification":
+        st.write("Histograma de alunos por Qualificação Prévia")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.5)
-        plt.xticks(range(18))
+        ax2.hist(dataBase[selectColuna], bins=range(1, 19), rwidth=0.8)
+        ax2.set_xticks(range(1, 19))
 
         st.pyplot(fig)
 
     # Seleção de histograma do Nacionalidade
-    elif(selectColuna == "Nacionality"):
+    elif selectColuna == "Nacionality":
         st.write("Histograma de alunos por Nacionalidade")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.2)
-        plt.xticks(range(21))
+        ax2.hist(dataBase[selectColuna], rwidth=0.8, bins=range(21))  # Ajuste o valor de rwidth
+        ax2.set_xticks(range(21))
 
         st.pyplot(fig)
-    
     # Seleção de histograma do qualificações da mãe
-    elif(selectColuna == "Mother's qualification"):
+    elif selectColuna == "Mother's qualification":
         st.write("Histograma de alunos por Qualificações da mãe")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.3)
-        plt.xticks(range(30))
+        ax2.hist(dataBase[selectColuna], bins=range(1, 31), rwidth=0.8)
+        ax2.set_xticks(range(1, 31))
 
         st.pyplot(fig)
-    
     # Seleção de histograma do qualificações do pai
-    elif(selectColuna == "Fathe's qualification"):
-        st.write("Histograma de alunos por Qualificações da pai")
+    elif selectColuna == "Father's qualification":
+        st.write("Histograma de alunos por Qualificações do pai")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.3)
-        plt.xticks(range(30))
+        ax2.hist(dataBase[selectColuna], bins=range(1, 31), rwidth=0.8)
+        ax2.set_xticks(range(1, 31))
 
         st.pyplot(fig)
     
     # Seleção de histograma do Deslocado
-    elif(selectColuna == "Displaced"):
+    elif selectColuna == "Displaced":
         st.write("Histograma de alunos por Deslocado")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Não", "Sim"])
 
         st.pyplot(fig)
     
     # Seleção de histograma do Necessidades educacionais especiais
-    elif(selectColuna == "Educational special needs"):
-        st.write("Histograma de alunos por necessidades educacionais especiais")
+    elif selectColuna == "Educational special needs":
+        st.write("Histograma de alunos por Necessidades Educacionais Especiais")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Não", "Sim"])
 
         st.pyplot(fig)
-
     # Seleção de histograma do Devedor
-    elif(selectColuna == "Debtor"):
+    elif selectColuna == "Debtor":
         st.write("Histograma de alunos por Devedor")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Não", "Sim"])
 
         st.pyplot(fig)
 
     # Seleção de histograma do Mensalidades em dia
-    elif(selectColuna == "Tuition fees up to date"):
+    elif selectColuna == "Tuition fees up to date":
         st.write("Histograma de alunos por Mensalidade em dia")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Não", "Sim"])
 
         st.pyplot(fig)
 
     # Seleção de histograma por Generos
-    elif(selectColuna == "Gender"):
-        st.write("Histograma de alunos por Genero")
+    elif selectColuna == "Gender":
+        st.write("Histograma de alunos por Gênero")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Feminino", "Masculino"])
 
         st.pyplot(fig)
 
     # Seleção de histograma por Bolsistas
-    elif(selectColuna == "Scholarship holder"):
+    elif selectColuna == "Scholarship holder":
         st.write("Histograma de alunos por Bolsistas")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Não", "Sim"])
 
         st.pyplot(fig)
+
 
     # Seleção de histograma por Idade na Inscrição
-    elif(selectColuna == "Age at enrollment"):
+    elif selectColuna == "Age at enrollment":
         st.write("Histograma de alunos por Idade na Inscrição")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(46))
+        ax2.hist(dataBase[selectColuna], bins=range(1, 46), rwidth=0.8)
+        ax2.set_xticks(range(1, 47, 2))  # Definindo marcações a cada 2 anos
 
         st.pyplot(fig)
+
 
     # Seleção de histograma pelo campo Internacional
-    elif(selectColuna == "International"):
+    elif selectColuna == "International":
         st.write("Histograma de alunos por Internacional")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(2))
+        ax2.hist(dataBase[selectColuna], bins=[0, 1, 2], rwidth=0.8)
+        ax2.set_xticks([0, 1])
+        ax2.set_xticklabels(["Não", "Sim"])
 
         st.pyplot(fig)
+
 
     # Seleção de histograma das Unidades curriculares 1º semestre (creditadas)
     elif(selectColuna == "Curricular units 1st sem (credited)"):
         st.write("Histograma de alunos por Unidades curriculares 1º semestre (creditadas)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.5)
+        ax2.hist(dataBase[selectColuna],bins=range(21), rwidth=0.5)
         plt.xticks(range(21))
 
         st.pyplot(fig)
@@ -197,43 +203,49 @@ if(baseSelecionada == 'Completa'):
     elif(selectColuna == "Curricular units 1st sem (enrolled)"):
         st.write("Histograma de alunos por Unidades curriculares 1º semestre (matriculado)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.5)
+        ax2.hist(dataBase[selectColuna],bins=range(23), rwidth=0.5)
         plt.xticks(range(23))
 
         st.pyplot(fig)
 
+
     # Seleção de histograma das Unidades curriculares 1º semestre (avaliações)
-    elif(selectColuna == "Curricular units 1st sem (evaluations)"):
+    elif selectColuna == "Curricular units 1st sem (evaluations)":
         st.write("Histograma de alunos por Unidades curriculares 1º semestre (avaliações)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(8))
+        ax2.hist(dataBase[selectColuna], bins=range(35), rwidth=0.8)
+        ax2.set_xticks(range(0, 35, 2))
 
         st.pyplot(fig)
+
 
     # Seleção de histograma das Unidades curriculares 1º semestre (aprovado)
-    elif(selectColuna == "Curricular units 1st sem (approved)"):
+    elif selectColuna == "Curricular units 1st sem (approved)":
         st.write("Histograma de alunos por Unidades curriculares 1º semestre (aprovado)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.2)
-        plt.xticks(range(35))
+        ax2.hist(dataBase[selectColuna], bins=range(23), rwidth=0.8)
+        ax2.set_xticks(range(0, 23, 2))  # Define marcações a cada 2 unidades curriculares
+        ax2.set_xticklabels(range(0, 23, 2))  # Rotula as marcações com valores
 
         st.pyplot(fig)
+
 
     # Seleção de histograma das Unidades curriculares 1º semestre (Nota)
-    elif(selectColuna == "Curricular units 1st sem (grade)"):
+    elif selectColuna == "Curricular units 1st sem (grade)":
         st.write("Histograma de alunos por Unidades curriculares 1º semestre (Nota)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(8))
+        ax2.hist(dataBase[selectColuna], bins=range(18), rwidth=0.8)
+        ax2.set_xticks(range(18))
+        ax2.set_xticklabels(range(18))
 
         st.pyplot(fig)
+
 
     # Seleção de histograma das Unidades curriculares 1º semestre (sem avaliações)
     elif(selectColuna == "Curricular units 1st sem (without evaluations)"):
         st.write("Histograma de alunos por Unidades curriculares 1º semestre (sem avaliações)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.7)
+        ax2.hist(dataBase[selectColuna], bins=range(11), rwidth=0.7)
         plt.xticks(range(11))
 
         st.pyplot(fig)
@@ -242,7 +254,7 @@ if(baseSelecionada == 'Completa'):
     elif(selectColuna == "Curricular units 2nd sem (credited)"):
         st.write("Histograma de alunos por Unidades curriculares 2º semestre (creditadas)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.4)
+        ax2.hist(dataBase[selectColuna], bins=range(21), rwidth=0.4)
         plt.xticks(range(21))
 
         st.pyplot(fig)
@@ -251,7 +263,7 @@ if(baseSelecionada == 'Completa'):
     elif(selectColuna == "Curricular units 2nd sem (enrolled)"):
         st.write("Histograma de alunos por Unidades curriculares 2º semestre (matriculado)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.3)
+        ax2.hist(dataBase[selectColuna],bins=range(23), rwidth=0.8)
         plt.xticks(range(23))
 
         st.pyplot(fig)
@@ -260,7 +272,7 @@ if(baseSelecionada == 'Completa'):
     elif(selectColuna == "Curricular units 2nd sem (evaluations)"):
         st.write("Histograma de alunos por Unidades curriculares 2º semestre (avaliações)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
+        ax2.hist(dataBase[selectColuna], bins=range(8),rwidth=0.8)
         plt.xticks(range(8))
 
         st.pyplot(fig)
@@ -269,8 +281,8 @@ if(baseSelecionada == 'Completa'):
     elif(selectColuna == "Curricular units 2nd sem (approved)"):
         st.write("Histograma de alunos por Unidades curriculares 2º semestre (aprovado)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.2)
-        plt.xticks(range(35))
+        ax2.hist(dataBase[selectColuna],bins=range(20), rwidth=0.8)
+        plt.xticks(range(1,20, 1))
 
         st.pyplot(fig)
 
@@ -287,7 +299,7 @@ if(baseSelecionada == 'Completa'):
     elif(selectColuna == "Curricular units 2nd sem (without evaluations)"):
         st.write("Histograma de alunos por Unidades curriculares 2º semestre (sem avaliações)")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.7)
+        ax2.hist(dataBase[selectColuna], bins=range(11), rwidth=0.7)
         plt.xticks(range(11))
 
         st.pyplot(fig)
@@ -296,26 +308,27 @@ if(baseSelecionada == 'Completa'):
     elif(selectColuna == "Unemployment rate"):
         st.write("Histograma de alunos por taxa de desemprego")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(8))
+        ax2.hist(dataBase[selectColuna], bins=range(20),rwidth=0.8)
+        plt.xticks(range(20))
 
         st.pyplot(fig)
 
     # Seleção de histograma do taxa de inflação
-    elif(selectColuna == "Inflation rate"):
+    elif selectColuna == "Inflation rate":
         st.write("Histograma de alunos por taxa de inflação")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=1)
-        # plt.xticks(range(9))
+        ax2.hist(dataBase[selectColuna], bins=range(-1, 5), rwidth=0.8)
+        ax2.set_xticks(range(-1, 5, 1))  # Define marcações no eixo X de -8 a 12 com incremento de 2
 
         st.pyplot(fig)
 
+
     # Seleção de histograma do GPD
     elif(selectColuna == "GDP"):
-        st.write("Histograma de alunos por GPD")
+        st.write("Histograma de alunos por GDP")
         fig, ax2 = plt.subplots()
-        ax2.hist(dataBase[selectColuna], rwidth=0.8)
-        plt.xticks(range(8))
+        ax2.hist(dataBase[selectColuna], bins=range(-5,10), rwidth=0.8)
+        plt.xticks(range(-5,10,1))
 
         st.pyplot(fig)
 
